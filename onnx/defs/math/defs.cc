@@ -22,9 +22,30 @@ Performs element-wise binary {name} (with Numpy-style broadcasting support).
         ReplaceAll(
             doc, "{broadcast_doc}", GenerateBroadcastingDocMul().c_str()););
     schema.SetDoc(doc);
-    schema.Input(0, "A", "First operand.", "T");
-    schema.Input(1, "B", "Second operand.", "T");
-    schema.Output(0, "C", "Result, has same element type as two inputs", "T");
+    schema.Input(0, 
+        "A", 
+        "First operand.", 
+        "T",
+        OpSchema::Single,
+        true,
+        1,
+        OpSchema::Differentiable);
+    schema.Input(1, 
+        "B", 
+        "Second operand.", 
+        "T",
+        OpSchema::Single,
+        true,
+        1,
+        OpSchema::Differentiable);
+    schema.Output(0, 
+        "C", 
+        "Result, has same element type as two inputs", 
+        "T",
+        OpSchema::Single,
+        true,
+        1,
+        OpSchema::Differentiable);
     schema.TypeConstraint(
         "T",
         OpSchema::numeric_types_for_math_reduction_with_bfloat(),
@@ -77,13 +98,21 @@ and contains the {name} values of the corresponding input.
         "input",
         "The input tensor that's coerced into a 2D matrix of size (NxD) "
         "as described above.",
-        "T");
+        "T",
+        OpSchema::Single,
+        true,
+        1,
+        OpSchema::Differentiable);
     schema.Output(
         0,
         "output",
         "The output values with the same "
         "shape as input tensor (the original size without coercion).",
-        "T");
+        "T",
+        OpSchema::Single,
+        true,
+        1,
+        OpSchema::Differentiable);
     schema.TypeConstraint(
         "T",
         {"tensor(float16)",
@@ -157,9 +186,30 @@ ONNX_OPERATOR_SET_SCHEMA(
             "Whether the operator should behave like fmod (default=0 meaning it will do integer mods); Set this to 1 to force fmod treatment",
             AttributeProto::INT,
             static_cast<int64_t>(0))
-        .Input(0, "A", "Dividend tensor", "T")
-        .Input(1, "B", "Divisor tensor", "T")
-        .Output(0, "C", "Remainder tensor", "T")
+        .Input(0, 
+            "A", 
+            "Dividend tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Input(1, 
+            "B", 
+            "Divisor tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::NonDifferentiable)
+        .Output(0, 
+            "C", 
+            "Remainder tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             OpSchema::all_numeric_types_with_bfloat(),
@@ -194,8 +244,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Neg_ver13_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float)",
@@ -220,8 +284,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Abs_ver13_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             OpSchema::all_numeric_types_with_bfloat(),
@@ -239,8 +317,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Reciprocal_ver13_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
@@ -261,8 +353,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Floor_ver13_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::NonDifferentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
@@ -283,8 +389,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Ceil_ver13_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::NonDifferentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::NonDifferentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
@@ -305,8 +425,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Sqrt_ver13_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
@@ -327,8 +461,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Relu_ver13_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
@@ -350,8 +498,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     OpSchema()
         .Attr("alpha", "Coefficient of leakage.", AttributeProto::FLOAT, 0.01f)
         .SetDoc(LeakyRelu_ver6_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)", "tensor(float)", "tensor(double)"},
@@ -370,8 +532,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     OpSchema()
         .SetDoc(ThresholdedRelu_ver10_doc)
         .Attr("alpha", "Threshold value", AttributeProto::FLOAT, 1.0f)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)", "tensor(float)", "tensor(double)"},
@@ -402,8 +578,22 @@ ONNX_OPERATOR_SET_SCHEMA(
             AttributeProto::FLOAT,
             1.05070102214813232421875f)
         .SetDoc(Selu_ver6_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)", "tensor(float)", "tensor(double)"},
@@ -423,8 +613,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     OpSchema()
         .Attr("alpha", "Coefficient of ELU.", AttributeProto::FLOAT, 1.0f)
         .SetDoc(Elu_ver6_doc)
-        .Input(0, "X", "1D input tensor", "T")
-        .Output(0, "Y", "1D input tensor", "T")
+        .Input(0, 
+            "X", 
+            "1D input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "1D output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)", "tensor(float)", "tensor(double)"},
@@ -482,8 +686,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     12,
     OpSchema()
         .SetDoc(celu_ver12_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .Attr(
             "alpha",
             "The Alpha value in Celu formula which control the shape of "
@@ -507,13 +725,24 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Exp_ver13_doc)
-        .Input(0, "input", "Input tensor", "T")
+        .Input(0, 
+            "input", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .Output(
             0,
             "output",
             "The exponential of the input tensor computed "
             "element-wise",
-            "T")
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
@@ -532,13 +761,24 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Log_ver13_doc)
-        .Input(0, "input", "Input tensor", "T")
+        .Input(0, 
+            "input", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .Output(
             0,
             "output",
             "The natural log of the input tensor computed "
             "element-wise",
-            "T")
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
@@ -557,13 +797,24 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Tanh_ver13_doc)
-        .Input(0, "input", "Input tensor", "T")
+        .Input(0, 
+            "input", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .Output(
             0,
             "output",
             "The hyperbolic tangent values of the input tensor "
             "computed element-wise",
-            "T")
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
@@ -585,9 +836,30 @@ ONNX_OPERATOR_SET_SCHEMA(
     OpSchema()
         .SetDoc(GET_OP_DOC_STR(
             std::string(Pow_ver13_doc) + GenerateBroadcastingDocMul()))
-        .Input(0, "X", "First operand, base of the exponent.", "T")
-        .Input(1, "Y", "Second operand, power of the exponent.", "T1")
-        .Output(0, "Z", "Output tensor (same size as X)", "T")
+        .Input(0, 
+            "X", 
+            "First operand, base of the exponent.", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Input(1, 
+            "Y", 
+            "Second operand, power of the exponent.", 
+            "T1",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Z", 
+            "Output tensor (same size as X)", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(int32)",
@@ -633,14 +905,32 @@ ONNX_OPERATOR_SET_SCHEMA(
         .SetDoc(GET_OP_DOC_STR(
             std::string(PRelu_ver9_doc) +
             GenerateBroadcastingDocUni("tensor slope", "input tensor X")))
-        .Input(0, "X", "Input tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .Input(
             1,
             "slope",
             "Slope tensor. The shape of slope can be smaller then first input X; "
             "if so, its shape must be unidirectional broadcastable to X",
-            "T")
-        .Output(0, "Y", "Output tensor (same size as X)", "T")
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor (same size as X)", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
@@ -664,8 +954,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Sigmoid_ver13_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
@@ -688,8 +992,22 @@ ONNX_OPERATOR_SET_SCHEMA(
         .Attr("alpha", "Value of alpha.", AttributeProto::FLOAT, 0.2f)
         .Attr("beta", "Value of beta.", AttributeProto::FLOAT, 0.5f)
         .SetDoc(HardSigmoid_ver6_doc)
-        .Input(0, "X", "Input tensor", "T")
-        .Output(0, "Y", "Output tensor", "T")
+        .Input(0, 
+            "X", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)", "tensor(float)", "tensor(double)"},
@@ -717,8 +1035,18 @@ All inputs and outputs must have the same data type.
         "data_0",
         "List of tensors for " + std::string(name) + ".",
         "T",
-        OpSchema::Variadic);
-    schema.Output(0, name, "Output tensor.", "T");
+        OpSchema::Variadic,
+        true,
+        1,
+        OpSchema::Differentiable);
+    schema.Output(0, 
+        name, 
+        "Output tensor.", 
+        "T",
+        OpSchema::Single,
+        true,
+        1,
+        OpSchema::Differentiable);
     schema.TypeAndShapeInferenceFunction([](InferenceContext& ctx) {
       propagateElemTypeFromInputToOutput(ctx, 0, 0);
       int num_inputs = static_cast<int>(ctx.getNumInputs());
@@ -796,22 +1124,42 @@ ONNX_OPERATOR_SET_SCHEMA(
     13,
     OpSchema()
         .SetDoc(Clip_ver13_doc)
-        .Input(0, "input", "Input tensor whose elements to be clipped", "T")
+        .Input(0, 
+            "input", 
+            "Input tensor whose elements to be clipped", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .Input(
             1,
             "min",
             "Minimum value, under which element is replaced by min. "
             "It must be a scalar(tensor of empty shape).",
             "T",
-            OpSchema::Optional)
+            OpSchema::Optional,
+            true,
+            1,
+            OpSchema::NonDifferentiable)
         .Input(
             2,
             "max",
             "Maximum value, above which element is replaced by max. "
             "It must be a scalar(tensor of empty shape).",
             "T",
-            OpSchema::Optional)
-        .Output(0, "output", "Output tensor with clipped input elements", "T")
+            OpSchema::Optional,
+            true,
+            1,
+            OpSchema::NonDifferentiable)
+        .Output(0, 
+            "output", 
+            "Output tensor with clipped input elements", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             OpSchema::all_numeric_types_with_bfloat(),
@@ -846,12 +1194,23 @@ ONNX_OPERATOR_SET_SCHEMA(
     1,
     OpSchema()
         .SetDoc(Softsign_ver1_doc)
-        .Input(0, "input", "Input tensor", "T")
+        .Input(0, 
+            "input", 
+            "Input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .Output(
             0,
             "output",
             "The softsign (x/(1+|x|)) values of the input tensor computed element-wise",
-            "T")
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)", "tensor(float)", "tensor(double)"},
@@ -869,8 +1228,22 @@ ONNX_OPERATOR_SET_SCHEMA(
     1,
     OpSchema()
         .SetDoc(Softplus_ver1_doc)
-        .Input(0, "X", "1D input tensor", "T")
-        .Output(0, "Y", "1D input tensor", "T")
+        .Input(0, 
+            "X", 
+            "1D input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "1D input tensor", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)", "tensor(float)", "tensor(double)"},
@@ -904,14 +1277,22 @@ ONNX_OPERATOR_SET_SCHEMA(
             "Input tensor A. "
             "The shape of A should be (M, K) if transA is 0, "
             "or (K, M) if transA is non-zero.",
-            "T")
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .Input(
             1,
             "B",
             "Input tensor B. "
             "The shape of B should be (K, N) if transB is 0, "
             "or (N, K) if transB is non-zero.",
-            "T")
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .Input(
             2,
             "C",
@@ -919,8 +1300,18 @@ ONNX_OPERATOR_SET_SCHEMA(
             "If not specified, the computation is done as if C is a scalar 0. "
             "The shape of C should be unidirectional broadcastable to (M, N).",
             "T",
-            OpSchema::Optional)
-        .Output(0, "Y", "Output tensor of shape (M, N).", "T")
+            OpSchema::Optional,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Output tensor of shape (M, N).", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
@@ -1058,9 +1449,29 @@ ONNX_OPERATOR_SET_SCHEMA(
     MatMul,
     13,
     OpSchema()
-        .Input(0, "A", "N-dimensional matrix A", "T")
-        .Input(1, "B", "N-dimensional matrix B", "T")
-        .Output(0, "Y", "Matrix multiply results from A * B", "T")
+        .Input(0, 
+            "A", "N-dimensional matrix A", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Input(1, 
+            "B", 
+            "N-dimensional matrix B", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
+        .Output(0, 
+            "Y", 
+            "Matrix multiply results from A * B", 
+            "T",
+            OpSchema::Single,
+            true,
+            1,
+            OpSchema::Differentiable)
         .TypeConstraint(
             "T",
             {"tensor(float16)",
