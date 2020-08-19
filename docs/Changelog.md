@@ -3977,14 +3977,14 @@ This version of the operator has been available since version 1 of the default O
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>1D input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>1D input tensor</dd>
 </dl>
 
@@ -4006,14 +4006,14 @@ This version of the operator has been available since version 1 of the default O
 #### Inputs
 
 <dl>
-<dt><tt>input</tt> : T</dt>
+<dt><tt>input</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>output</tt> : T</dt>
+<dt><tt>output</tt> (differentiable) : T</dt>
 <dd>The softsign (x/(1+|x|)) values of the input tensor computed element-wise</dd>
 </dl>
 
@@ -5367,15 +5367,15 @@ This version of the operator has been available since version 6 of the default O
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>1D input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
-<dd>1D input tensor</dd>
+<dt><tt>Y</tt> (differentiable) : T</dt>
+<dd>1D output tensor</dd>
 </dl>
 
 #### Type Constraints
@@ -5522,14 +5522,14 @@ This version of the operator has been available since version 6 of the default O
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -5605,14 +5605,14 @@ This version of the operator has been available since version 6 of the default O
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -5951,14 +5951,14 @@ This version of the operator has been available since version 6 of the default O
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -8741,16 +8741,16 @@ This version of the operator has been available since version 9 of the default O
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
-<dt><tt>slope</tt> : T</dt>
+<dt><tt>slope</tt> (differentiable) : T</dt>
 <dd>Slope tensor. The shape of slope can be smaller then first input X; if so, its shape must be unidirectional broadcastable to X</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor (same size as X)</dd>
 </dl>
 
@@ -10203,14 +10203,14 @@ This version of the operator has been available since version 10 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -13983,14 +13983,14 @@ This version of the operator has been available since version 12 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -14881,14 +14881,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -14912,16 +14912,16 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>A</tt> : T</dt>
+<dt><tt>A</tt> (differentiable) : T</dt>
 <dd>First operand.</dd>
-<dt><tt>B</tt> : T</dt>
+<dt><tt>B</tt> (differentiable) : T</dt>
 <dd>Second operand.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>C</tt> : T</dt>
+<dt><tt>C</tt> (differentiable) : T</dt>
 <dd>Result, has same element type as two inputs</dd>
 </dl>
 
@@ -15093,14 +15093,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (non-differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (non-differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -15124,18 +15124,18 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs (1 - 3)
 
 <dl>
-<dt><tt>input</tt> : T</dt>
+<dt><tt>input</tt> (differentiable) : T</dt>
 <dd>Input tensor whose elements to be clipped</dd>
-<dt><tt>min</tt> (optional) : T</dt>
+<dt><tt>min</tt> (optional, non-differentiable) : T</dt>
 <dd>Minimum value, under which element is replaced by min. It must be a scalar(tensor of empty shape).</dd>
-<dt><tt>max</tt> (optional) : T</dt>
+<dt><tt>max</tt> (optional, non-differentiable) : T</dt>
 <dd>Maximum value, above which element is replaced by max. It must be a scalar(tensor of empty shape).</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>output</tt> : T</dt>
+<dt><tt>output</tt> (differentiable) : T</dt>
 <dd>Output tensor with clipped input elements</dd>
 </dl>
 
@@ -15350,16 +15350,16 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>A</tt> : T</dt>
+<dt><tt>A</tt> (differentiable) : T</dt>
 <dd>First operand.</dd>
-<dt><tt>B</tt> : T</dt>
+<dt><tt>B</tt> (differentiable) : T</dt>
 <dd>Second operand.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>C</tt> : T</dt>
+<dt><tt>C</tt> (differentiable) : T</dt>
 <dd>Result, has same element type as two inputs</dd>
 </dl>
 
@@ -15503,14 +15503,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>input</tt> : T</dt>
+<dt><tt>input</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>output</tt> : T</dt>
+<dt><tt>output</tt> (differentiable) : T</dt>
 <dd>The exponential of the input tensor computed element-wise</dd>
 </dl>
 
@@ -15610,14 +15610,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (non-differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -15982,18 +15982,18 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs (2 - 3)
 
 <dl>
-<dt><tt>A</tt> : T</dt>
+<dt><tt>A</tt> (differentiable) : T</dt>
 <dd>Input tensor A. The shape of A should be (M, K) if transA is 0, or (K, M) if transA is non-zero.</dd>
-<dt><tt>B</tt> : T</dt>
+<dt><tt>B</tt> (differentiable) : T</dt>
 <dd>Input tensor B. The shape of B should be (K, N) if transB is 0, or (N, K) if transB is non-zero.</dd>
-<dt><tt>C</tt> (optional) : T</dt>
+<dt><tt>C</tt> (optional, differentiable) : T</dt>
 <dd>Optional input tensor C. If not specified, the computation is done as if C is a scalar 0. The shape of C should be unidirectional broadcastable to (M, N).</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor of shape (M, N).</dd>
 </dl>
 
@@ -16071,14 +16071,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>input</tt> : T</dt>
+<dt><tt>input</tt> (differentiable) : T</dt>
 <dd>The input tensor that's coerced into a 2D matrix of size (NxD) as described above.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>output</tt> : T</dt>
+<dt><tt>output</tt> (differentiable) : T</dt>
 <dd>The output values with the same shape as input tensor (the original size without coercion).</dd>
 </dl>
 
@@ -16247,14 +16247,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>input</tt> : T</dt>
+<dt><tt>input</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>output</tt> : T</dt>
+<dt><tt>output</tt> (differentiable) : T</dt>
 <dd>The natural log of the input tensor computed element-wise</dd>
 </dl>
 
@@ -16296,14 +16296,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>input</tt> : T</dt>
+<dt><tt>input</tt> (differentiable) : T</dt>
 <dd>The input tensor that's coerced into a 2D matrix of size (NxD) as described above.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>output</tt> : T</dt>
+<dt><tt>output</tt> (differentiable) : T</dt>
 <dd>The output values with the same shape as input tensor (the original size without coercion).</dd>
 </dl>
 
@@ -16325,16 +16325,16 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>A</tt> : T</dt>
+<dt><tt>A</tt> (differentiable) : T</dt>
 <dd>N-dimensional matrix A</dd>
-<dt><tt>B</tt> : T</dt>
+<dt><tt>B</tt> (differentiable) : T</dt>
 <dd>N-dimensional matrix B</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Matrix multiply results from A * B</dd>
 </dl>
 
@@ -16358,14 +16358,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs (1 - &#8734;)
 
 <dl>
-<dt><tt>data_0</tt> (variadic) : T</dt>
+<dt><tt>data_0</tt> (variadic, differentiable) : T</dt>
 <dd>List of tensors for max.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>max</tt> : T</dt>
+<dt><tt>max</tt> (differentiable) : T</dt>
 <dd>Output tensor.</dd>
 </dl>
 
@@ -16389,14 +16389,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs (1 - &#8734;)
 
 <dl>
-<dt><tt>data_0</tt> (variadic) : T</dt>
+<dt><tt>data_0</tt> (variadic, differentiable) : T</dt>
 <dd>List of tensors for mean.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>mean</tt> : T</dt>
+<dt><tt>mean</tt> (differentiable) : T</dt>
 <dd>Output tensor.</dd>
 </dl>
 
@@ -16457,14 +16457,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs (1 - &#8734;)
 
 <dl>
-<dt><tt>data_0</tt> (variadic) : T</dt>
+<dt><tt>data_0</tt> (variadic, differentiable) : T</dt>
 <dd>List of tensors for min.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>min</tt> : T</dt>
+<dt><tt>min</tt> (differentiable) : T</dt>
 <dd>Output tensor.</dd>
 </dl>
 
@@ -16505,16 +16505,16 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>A</tt> : T</dt>
+<dt><tt>A</tt> (differentiable) : T</dt>
 <dd>Dividend tensor</dd>
-<dt><tt>B</tt> : T</dt>
+<dt><tt>B</tt> (non-differentiable) : T</dt>
 <dd>Divisor tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>C</tt> : T</dt>
+<dt><tt>C</tt> (differentiable) : T</dt>
 <dd>Remainder tensor</dd>
 </dl>
 
@@ -16538,16 +16538,16 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>A</tt> : T</dt>
+<dt><tt>A</tt> (differentiable) : T</dt>
 <dd>First operand.</dd>
-<dt><tt>B</tt> : T</dt>
+<dt><tt>B</tt> (differentiable) : T</dt>
 <dd>Second operand.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>C</tt> : T</dt>
+<dt><tt>C</tt> (differentiable) : T</dt>
 <dd>Result, has same element type as two inputs</dd>
 </dl>
 
@@ -16571,14 +16571,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -16755,16 +16755,16 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>First operand, base of the exponent.</dd>
-<dt><tt>Y</tt> : T1</dt>
+<dt><tt>Y</tt> (differentiable) : T1</dt>
 <dd>Second operand, power of the exponent.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Z</tt> : T</dt>
+<dt><tt>Z</tt> (differentiable) : T</dt>
 <dd>Output tensor (same size as X)</dd>
 </dl>
 
@@ -16835,14 +16835,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -17296,14 +17296,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -17712,14 +17712,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -17896,14 +17896,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>input</tt> : T</dt>
+<dt><tt>input</tt> (differentiable) : T</dt>
 <dd>The input tensor that's coerced into a 2D matrix of size (NxD) as described above.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>output</tt> : T</dt>
+<dt><tt>output</tt> (differentiable) : T</dt>
 <dd>The output values with the same shape as input tensor (the original size without coercion).</dd>
 </dl>
 
@@ -18081,14 +18081,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>X</tt> : T</dt>
+<dt><tt>X</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>Y</tt> : T</dt>
+<dt><tt>Y</tt> (differentiable) : T</dt>
 <dd>Output tensor</dd>
 </dl>
 
@@ -18151,16 +18151,16 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>A</tt> : T</dt>
+<dt><tt>A</tt> (differentiable) : T</dt>
 <dd>First operand.</dd>
-<dt><tt>B</tt> : T</dt>
+<dt><tt>B</tt> (differentiable) : T</dt>
 <dd>Second operand.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>C</tt> : T</dt>
+<dt><tt>C</tt> (differentiable) : T</dt>
 <dd>Result, has same element type as two inputs</dd>
 </dl>
 
@@ -18184,14 +18184,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs (1 - &#8734;)
 
 <dl>
-<dt><tt>data_0</tt> (variadic) : T</dt>
+<dt><tt>data_0</tt> (variadic, differentiable) : T</dt>
 <dd>List of tensors for sum.</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>sum</tt> : T</dt>
+<dt><tt>sum</tt> (differentiable) : T</dt>
 <dd>Output tensor.</dd>
 </dl>
 
@@ -18213,14 +18213,14 @@ This version of the operator has been available since version 13 of the default 
 #### Inputs
 
 <dl>
-<dt><tt>input</tt> : T</dt>
+<dt><tt>input</tt> (differentiable) : T</dt>
 <dd>Input tensor</dd>
 </dl>
 
 #### Outputs
 
 <dl>
-<dt><tt>output</tt> : T</dt>
+<dt><tt>output</tt> (differentiable) : T</dt>
 <dd>The hyperbolic tangent values of the input tensor computed element-wise</dd>
 </dl>
 
